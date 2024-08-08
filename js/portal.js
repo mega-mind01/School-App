@@ -17,9 +17,9 @@ document.getElementById('otpForm').addEventListener('submit', function (event) {
             if(allUsers[i].mail == emailInput) {
                 userIndex = i;
                 return true;
-            }            
-            return false;
-        }
+            }      
+        }              
+        return false;
     }
    
     if (userOtp !== null) {
@@ -46,6 +46,7 @@ document.getElementById('otpInput').addEventListener('input', function () {
 })
 
 function displayQuiz () {    
+    debugger;
     const mainContainer = clear('main');
     const quizMain = document.createElement('div');
     quizMain.className = 'container d-flex justify-content-center align-items-center mt-5';
@@ -208,7 +209,9 @@ function examPage() {
 }
 
 function getExam(course) {
+    debugger;
     examName = course;
     exam = JSON.parse(localStorage.getItem(`${course}`));
+    questionIndex = 0;
     displayQuiz();
 }
